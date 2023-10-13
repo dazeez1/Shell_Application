@@ -39,11 +39,13 @@ delete_student() {
     echo "Enter student ID to delete:"
     read student_id
     sed -i "/$student_id/d" students-list_0923.txt
+}
 
 # Function to update a student record by student ID
 update_student() {
     echo "Enter student ID to update:"
     read student_id
+}
 
 # Function to exit the application
 exit_application() {
@@ -71,4 +73,3 @@ while true; do
         *) echo "Invalid choice. Please try again." ;;
     esac
 done
-
