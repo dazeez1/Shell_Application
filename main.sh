@@ -70,4 +70,5 @@ while true; do
         5) exit_application ;;
         *) echo "Invalid choice. Please try again." ;;
     esac
-done 
+done
+
