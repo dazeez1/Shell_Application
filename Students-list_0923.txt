@@ -1,3 +1,0 @@
-d.azeez@alustudent.com, 23, 1001
-b.larose@alustudent.com, 22, 1002
-b.muyizere@alustudent.com, 24, 1003
