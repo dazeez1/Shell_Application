@@ -9,7 +9,7 @@ remote_directory="/summative/0923-2023s"
 # Source directory to back up
 source_directory="negpod_18-q1"
 
-# Rsync command to perform  backup
+# Rsync command to perform the  backup
 rsync -avz -e "sshpass -p $remote_password ssh -o StrictHostKeyChecking=no" "$source_directory" "$remote_username"@"$remote_host":"$remote_directory"/
 
 echo "Backup completed to $remote_host:$remote_directory/$source_directory."
