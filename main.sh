@@ -10,26 +10,48 @@ create_student_record() {
         echo "Invalid email format. Please enter a valid email."
         return 1
     fi
-    
+
     read -p "Enter student age: " age
     # Validate age as a number
     if ! [[ "$age" =~ ^[0-9]+$ ]]; then
         echo "Invalid age. Please enter a valid age."
         return 1
     fi
-    
+
     read -p "Enter student ID: " student_id
     # Validate student ID as a number
     if ! [[ "$student_id" =~ ^[0-9]+$ ]]; then
         echo "Invalid student ID. Please enter a valid ID."
         return 1
     fi
-    
+
     echo "$email, $age, $student_id" >> "$students_file"
     echo "Student record created and saved."
 }
 
-# ... (other functions remain unchanged)
+# Function to view all students
+view_all_students() {
+    cat students-list_0923.txt
+}
+
+# Function to delete a student by student ID
+delete_student() {
+    echo "Enter student ID to delete:"
+    read student_id
+    sed -i "/$student_id/d" students-list_0923.txt
+}
+
+# Function to update a student record by student ID
+update_student() {
+    echo "Enter student ID to update:"
+    read student_id
+}
+
+# Function to exit the application
+exit_application() {
+    echo "Exiting the application. Goodbye!"
+    exit 0
+}
 
 # Main application loop
 while true; do
@@ -44,8 +66,15 @@ while true; do
 
     case $choice in
         1) create_student_record ;;
-        # ... (other cases remain unchanged)
+        2) view_all_students ;;
+        3) delete_student ;;
+        4) update_student ;;
+        5) exit_application ;;
         *) echo "Invalid choice. Please try again." ;;
     esac
-done
+<<<<<<< HEAD
+don
 
+=======
+done
+>>>>>>> 4d141270735d47d5cd109f61eb093bbcdd319495
